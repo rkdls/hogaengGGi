@@ -31,7 +31,7 @@ export const Search = (...args) => {
         const urltitle = 'https://railsapi2-sghiroo.c9users.io/pokemons/'+args[0]+'.json';
         console.log('wwwwf', urltitle);
         console.log('strs', strs, args[0]);
-        dispatch(actions.Loading());
+        dispatch(actions.SearchLoading());
         $.ajax({
             url: urltitle,
             type: 'GET',
@@ -39,16 +39,12 @@ export const Search = (...args) => {
             success: function (res) {
                 console.log('comment res', res);
                 //빈결과일경우도 찾아봐야함
-                // dispatch(actions.comment(res.comment));
+                dispatch(actions.SearchRes(res));
             },
             error: function (res,status) {
                 console.log('2실패..', res, status);
                 console.log('시작');
-            },done: function (res, status) {
-                console.log('done' ,res, status);
-
-
-
+                dispatch(actions.SearchResFail());
             }
         });
     }

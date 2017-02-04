@@ -12,6 +12,8 @@ const initialstate = {
     //     title: ''
     // }
     recentBoard:[],
+    SearchRes:[],
+    SearchLoading :'INIT',
 };
 
 
@@ -37,6 +39,20 @@ const board = (state = initialstate, action) => {
         case 'RecentBoardRequestFail':
             return update(state, {
                 Loading: {$set: 'Done_But_Fail'},
+            });
+        case 'SearchLoading':
+            return update(state, {
+                SearchLoading:{$set:'Loading'}
+            });
+        case 'SearchRes':
+            return update(state, {
+                SearchLoading:{$set:'Done'},
+                SearchRes:{$set:action.SearchRes}
+            });
+        case 'SearchResFail':
+            return update(state, {
+                SearchLoading:{$set:'Done_But_Fail'},
+                SearchRes:{$set:action.SearchRes}
             });
         default:
             return state

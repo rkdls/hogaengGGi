@@ -5,6 +5,10 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import * as AjaxReq from '../actions/DB'
+import {FadeLoader} from 'halogen'
+import {Redirect, Route} from 'react-router-dom';
+import ResultPage from '../contents/ResultPage'
+
 
 class SearchBar extends Component {
 
@@ -41,25 +45,41 @@ class SearchBar extends Component {
             <div
                 className="HeaderArea"
             >
-                <div
-                    className="SearchBar"
-                >
-                    <input
-                        placeholder="검색"
-                        name="search"
-                        type="TEXT"
-                        onChange={this.handleChange}
-                        value={this.state.search}
-                        onKeyPress={this.handleKeyPress}
+
+                {
+                    this.props.SearchLoading === 'Loading' &&
+                    <FadeLoader color="#34239f"
+                                size="16px"
+                                margin="4px"
                     />
-                    <button
-                        onClick={(e) => {
-                            this.ajaxSearch(e)
-                        }}
+                }
+                {
+                    ((this.props.SearchLoading === 'Done' || this.props.SearchLoading ==='Done_But_Fail') && this.props.SearchRes) &&
+                    <Redirect push to="/searchresult"/>
+                }
+                {
+                    this.props.SearchLoading !== 'Loading' &&
+                    <div
+                        className="SearchBar"
                     >
-                        검색
-                    </button>
-                </div>
+                        <input
+                            placeholder="검색"
+                            name="search"
+                            type="TEXT"
+                            onChange={this.handleChange}
+                            value={this.state.search}
+                            onKeyPress={this.handleKeyPress}
+                        />
+                        <button
+                            onClick={(e) => {
+                                this.ajaxSearch(e)
+                            }}
+                        >
+                            검색
+                        </button>
+                    </div>
+                }
+                <Route path={'/searchresult'} component={ResultPage}/>
             </div>
         );
     }
@@ -71,14 +91,14 @@ SearchBar.defaultProps = defaultProps;
 
 const mapStateToProps = (state, ownProps) => {
     return {
-
+        SearchLoading: state.board.SearchLoading,
+        SearchRes: state.board.SearchRes
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         Search: (val) => {
-            "use strict";
             dispatch(AjaxReq.Search(val))
         }
     }

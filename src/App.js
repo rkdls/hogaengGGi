@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Board from './contents/Board'
 import SearchBar from './search/SearchBar'
+import {Route} from 'react-router-dom';
 class App extends Component {
     render() {
         return (
@@ -9,7 +10,9 @@ class App extends Component {
                 <div
                     className="mainContents"
                 >
-                    <Board/>
+                    <Route exact path={'/'} component={Board}/>
+
+
                 </div>
             </div>
         );
