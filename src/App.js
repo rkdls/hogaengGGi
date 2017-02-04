@@ -7,11 +7,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Board/>
           <SearchBar/>
+          <Board/>
       </div>
     );
   }
 }
 
-export default Apspp;
+export default App;

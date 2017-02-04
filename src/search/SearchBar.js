@@ -7,8 +7,11 @@ import React, {Component} from 'react';
 class SearchBar extends Component {
     render() {
         return (
-            <div>
-                게시글
+            <div
+
+                className="SearchBar"
+            >
+                검색창
             </div>
         );
     }
