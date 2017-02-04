@@ -10,19 +10,30 @@ html {
     overflow-x: hidden; height: 100%;
 }
 
+a { color: #333; }
+a:hover { text-decoration: none; color: #333; }
+
 h1, h2, h3, h4, h5, h6, p, ul, li {
     font-family: 'Roboto', "Noto Sans KR", "MalgunGothic", sans-serif !important;
 }
 
 
 /* navbar */
-
+.navbar-brand img {
+    display: block;
+    max-width: 30px;
+    margin-top: 15px;
+}
 .mainNav{background:#AF4140;position:relative;margin:0;padding:0;border-width:0;width:100%;-webkit-transition:all 2s ease;transition:all 2s ease; min-height: 65px;}
 .mainNav::after{clear:both}
 .navLeft h1{display:inline-block;margin:0}
-.navLeft ul{list-style:none;margin:0;padding-left:0;display:inline-block;float:right}
+.navLeft ul{list-style:none;margin:0;padding-left:0;display:inline-block;float:right; margin-left: 25px;}
 .navLeft ul li{display: inline-block; padding: 35px 20px;}
 .navLeft ul li a{font-size:20px;color:#fff}
+@media screen and (max-width: 767px) {
+    .navLeft ul li { padding: 35px 10px; }
+    .navLeft ul li a{font-size:13px;}
+}
 .navLeft{float:left}
 .navRight{float:right}
 
@@ -75,8 +86,8 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .rightSide {
-    display: flex;
-    justify-content: center; }
+    display: block;
+}
 
 .leftSide h3, .rightSide h3 {
     color: #922F2D;
@@ -84,27 +95,45 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     margin-bottom: 35px;
     letter-spacing: -0.7px;
 }
+@media screen and (max-width: 767px) {
+    .leftSide h3, .rightSide h3 {
+        color: #922F2D;
+        font-size: 17px;
+        letter-spacing: -0.7px;
+        padding-top: 20px;
+    }
+}
 .leftSide h3 span, .rightSide h3 span { display: inline-block; border-right: 3px solid #C9CDCB; border-left: 3px solid #C9CDCB; padding: 0px 15px; }
 
 /* 커뮤니티 컨텐츠 */
 .userboard_txt { border: 1px solid #eee; margin-bottom: 15px; padding: 0 2%; }
 .userboard_txt:nth-child(odd) { background: #fff; }
 .userboard_txt:nth-child(2n) { background: #ccc; }
+
+
+
 .userboard_title { margin: 0px 0px 15px !important; }
 .userboard_txt .txt_wrap { padding: 3% 0; }
 .userboard_txt .img_wrap img { max-width: 70px; display: block; margin: 19px auto; width: 100%; }
-.userboard_txt p > span { display: inline; float: right; }
+.userboard_txt p > span {
+    display: inline;
+    float: right;
+    font-weight: bold;
+    font-size: 15px;
+}
 
 
 /* 뉴스 컨텐츠 */
 .recentBoardList { padding-left: 0; }
-.InnerRecentBoardList { list-style: none; min-height: 150px;   margin-bottom: 45px;     list-style: none;
+.InnerRecentBoardList {
     min-height: 150px;
     margin-bottom: 45px;
     border: 2px solid #ccc;
-    padding: 9px;}
+    padding: 9px;
+    box-shadow: 1px 0px 4px 1px #c3c3c3;
+}
 .recentNewsTitle {
-    max-width: 100%;
+    max-width: 90%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -112,19 +141,38 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     font-size: 17px;
     color: #922F2D;
     font-weight: 700;
+    margin: 0 auto;
 }
 
+.recentNewsDescription { max-width: 90%; margin: 0 auto; display: block; }
+
 .ImageWrap { margin-bottom: 15px; }
-.ImageWrap img { width: 100%; height: auto; }
+.ImageWrap img {
+    width: 90%;
+    height: auto;
+    margin: 25px auto;
+    display: block;
+}
 
 
 /* 서브페이지 커스텀 */
 
 /* about */
 .about { max-width: 970px; width: 100%; margin: 85px auto 0; }
+@media screen and (max-width: 767px) { .about { margin: 85px auto; } }
 .about .img_wrap p { color: #C1363D; font-size: 16px; font-weight: 700; margin-top: 35px; }
 
 /* 검색 결과 페이지 */
+
+/* 스피너 */
+.spinner {
+    display: block !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.mainSpinner { max-width: 0% !important; margin: 0 auto !important; display: block !important; }
+
 .SearchRes .InnerSearchBoardList {
     width: calc(100%/3);
     float: left;
@@ -144,3 +192,21 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .recentSearchNewsTitle {
     margin-top: 35px;
     display: block; }
+
+
+/* animation */
+
+@keyframes widthfull {
+    0% { width: 0% }
+    100% { width: 100%; }
+}
+
+.SearchBar { animation: widthfull; animation-duration: 6s;  }
+.userboard_txt:nth-child(1) { animation: fadeInLeft;  animation-duration: .1.2s; }
+.userboard_txt:nth-child(2) { animation: fadeInLeft;  animation-duration: .1.2s; }
+.userboard_txt:nth-child(3) { animation: fadeInLeft;  animation-duration: .1.2s; }
+.userboard_txt:nth-child(4) { animation: fadeInLeft;  animation-duration: .1.2s; }
+
+.about .row > div:nth-child(1) { animation: fadeInUp; animation-delay: .4s; animation-duraion: .5s; }
+.about .row > div:nth-child(2) { animation: fadeInUp; animation-delay: .6s; animation-duraion: .5s; }
+.about .row > div:nth-child(3) { animation: fadeInUp; animation-delay: .8s; animation-duraion: .5s; }

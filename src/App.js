@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Board from './contents/Board'
 import SearchBar from './search/SearchBar'
 import {Route, Link} from 'react-router-dom';
-import logo from './img/logo1.png'
+import logo from './img/Logo.png'
 import centerLogo from './img/center_logo.png'
 import FreeBoard from './contents/FreeBoard'
 import ResultPage from './contents/ResultPage'

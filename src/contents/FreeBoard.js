@@ -55,8 +55,8 @@ class FreeBoard extends Component {
                                 </div>
                                 <div className="col-md-10 col-sm-9 col-xs-8">
                                     <div className="txt_wrap">
-                                        <h3 className="userboard_title">제목 입니다</h3>
-                                        <p className="userboard_des">내용 입니다<span className="writer">익명</span></p>
+                                        <h3 className="userboard_title">네이버 api가 없었다면 지금쯤..</h3>
+                                        <p className="userboard_des">사랑합니다<span className="writer">홍홍</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -71,8 +71,8 @@ class FreeBoard extends Component {
                                 </div>
                                 <div className="col-md-10 col-sm-9 col-xs-8">
                                     <div className="txt_wrap">
-                                        <h3 className="userboard_title">제목 입니다</h3>
-                                        <p className="userboard_des">내용 입니다<span className="writer">익명</span></p>
+                                        <h3 className="userboard_title">걍 써보는 글</h3>
+                                        <p className="userboard_des">글을...쓴다<span className="writer">익명</span></p>
                                     </div>
                                 </div>
                             </div>

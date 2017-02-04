@@ -53,10 +53,8 @@ class SearchBar extends Component {
 
                 {
                     this.props.SearchLoading === 'Loading' &&
-                    <FadeLoader color="#34239f"
-                                size="44"
-                                left="50%"
-                                position="absolute"
+                    <FadeLoader color="#C1363D"
+                                className="spinner"
                     />
                 }
                 {

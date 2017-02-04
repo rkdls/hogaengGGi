@@ -29,9 +29,8 @@ class Board extends Component {
                         {
 
                             this.props.Loading == 'Loading' &&
-                            <FadeLoader color="#34239f"
-                                        size="16px"
-                                        margin="4px"
+                            <FadeLoader color="#C1363D"
+                                        className="mainSpinner"
                             />
                         }
 
