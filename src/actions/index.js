@@ -8,3 +8,10 @@ export const Loading = (res) =>{
         type: 'Loading',
     }
 };
+
+export const RecentBoardRequest = (res) => {
+    console.log('reducer response ', res);
+    return{
+        type:'RecentBoardRequest'
+    }
+};
