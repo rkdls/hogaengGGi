@@ -67,7 +67,7 @@ class SearchBar extends Component {
                         className="SearchBar"
                     >
                         <input
-                            placeholder="검색하실 기업을 입력하세요"
+                            placeholder="알아보고자 하시는 기업이 어디인가요?"
                             name="search"
                             type="TEXT"
                             onChange={this.handleChange}
