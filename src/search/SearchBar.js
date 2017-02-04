@@ -8,6 +8,7 @@ import * as AjaxReq from '../actions/DB'
 import {FadeLoader} from 'halogen'
 import {Redirect, Route} from 'react-router-dom';
 import ResultPage from '../contents/ResultPage'
+import About from '../contents/About'
 
 
 class SearchBar extends Component {
@@ -85,6 +86,7 @@ class SearchBar extends Component {
                     </div>
                 }
                 <Route path={'/searchresult'} component={ResultPage}/>
+                <Route path={'/about'} component={About}/>
             </div>
         );
     }
