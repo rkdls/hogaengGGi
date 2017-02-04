@@ -70,7 +70,9 @@ SearchBar.propTypes = propTypes;
 SearchBar.defaultProps = defaultProps;
 
 const mapStateToProps = (state, ownProps) => {
-    return {}
+    return {
+
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {

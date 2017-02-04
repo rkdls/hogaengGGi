@@ -24,7 +24,7 @@ const board = (state = initialstate, action) => {
             });
         case 'RecentBoardRequest':
             return update(state, {
-                Loading: {$set: 'Loading'},
+                Loading: {$set: 'Done'},
                 // recentBoard: {
                 //     descriptions: {$set: action.descriptions},
                 //     link: {$set: action.link},
@@ -33,6 +33,10 @@ const board = (state = initialstate, action) => {
                 //     title: {$set: action.title},
                 // }
                 recentBoard:{$set:action.recentBoard}
+            });
+        case 'RecentBoardRequestFail':
+            return update(state, {
+                Loading: {$set: 'Done_But_Fail'},
             });
         default:
             return state

@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as ajaxReq from '../actions/DB'
+import {FadeLoader} from 'halogen'
 
 class Board extends Component {
 
@@ -13,6 +14,7 @@ class Board extends Component {
 
     render() {
         console.log('status', this.props.recentBoard);
+        console.log('Loading', this.props.Loading);
         return (
             <div
                 className="boardContents"
@@ -26,10 +28,19 @@ class Board extends Component {
                     >
                         {
 
+                            this.props.Loading == 'Loading' &&
+                            <FadeLoader color="#34239f"
+                                        size="16px"
+                                        margin="4px"
+                            />
+                        }
+
+                        {
                             this.props.recentBoard &&
                             this.props.recentBoard.map((val, i) => {
                                 return <li
                                     className="InnerRecentBoardList"
+                                    key={val.title.toString()}
                                 >
                                     <div
                                         className="ImageWrap"

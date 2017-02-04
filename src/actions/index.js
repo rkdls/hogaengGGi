@@ -21,3 +21,8 @@ export const RecentBoardRequest = (res) => {
         recentBoard:res
     }
 };
+export const RecentBoardRequestFail = (res) => {
+    return {
+        type:'RecentBoardRequestFail',
+    }
+}
