@@ -39,6 +39,10 @@ class SearchBar extends Component {
         }
     }
 
+    componentDidMount () {
+        this.searchInput.focus();
+    }
+
     render() {
         console.log('this.prosp', this.props);
         return (
@@ -63,11 +67,12 @@ class SearchBar extends Component {
                         className="SearchBar"
                     >
                         <input
-                            placeholder="검색"
+                            placeholder="검색하실 기업을 입력하세요"
                             name="search"
                             type="TEXT"
                             onChange={this.handleChange}
                             value={this.state.search}
+                            ref = { (input) => { this.searchInput = input } }
                             onKeyPress={this.handleKeyPress}
                         />
                         <button
@@ -75,7 +80,7 @@ class SearchBar extends Component {
                                 this.ajaxSearch(e)
                             }}
                         >
-                            검색
+                        <i className="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </div>
                 }

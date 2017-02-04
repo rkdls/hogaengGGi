@@ -27,9 +27,10 @@ class ResultPage extends Component {
                             <div
                                 className="ImageSearchWrap"
                             >
-                                <image
+                                <img
                                     className="recentSearchNewsImg"
                                     alt="상세 뉴스이미지"
+                                    src=".img/logo1.png"
                                 />
                             </div>
                             <span className="recentSearchNewsTitle"

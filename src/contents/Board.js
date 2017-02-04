@@ -22,13 +22,13 @@ class Board extends Component {
                 <div
                     className="recentBoard"
                 >
-                    최신글 목록
+                    <h3 className="news_title"><span>Today News</span></h3>
                     <ul
                         className="recentBoardList"
                     >
                         {
 
-                            this.props.Loading === 'Loading' &&
+                            this.props.Loading == 'Loading' &&
                             <FadeLoader color="#34239f"
                                         size="16px"
                                         margin="4px"
@@ -45,9 +45,10 @@ class Board extends Component {
                                     <div
                                         className="ImageWrap"
                                     >
-                                        <image
+                                        <img
                                             className="recentNewsImg"
                                             alt="뉴스이미지"
+                                            src="http://placehold.it/570x100?text=뉴스 이미지"
                                         />
                                     </div>
                                     <span className="recentNewsTitle"
