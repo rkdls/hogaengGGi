@@ -48,7 +48,7 @@ class Board extends Component {
                                         <img
                                             className="recentNewsImg"
                                             alt="뉴스이미지"
-                                            src="http://placehold.it/570x100?text=뉴스 이미지"
+                                            src={val.imgurl}
                                         />
                                     </div>
                                     <span className="recentNewsTitle"

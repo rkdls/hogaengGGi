@@ -22,7 +22,7 @@ class ResultPage extends Component {
                     this.props.SearchRes.map((val, i) => {
                         return <li
                             className="InnerSearchBoardList"
-                            key={val.title.toString()}
+                            key={i}
                         >
                             <div
                                 className="ImageSearchWrap"
@@ -30,7 +30,7 @@ class ResultPage extends Component {
                                 <img
                                     className="recentSearchNewsImg"
                                     alt="상세 뉴스이미지"
-                                    src=".img/logo1.png"
+                                    src={val.imgurl}
                                 />
                             </div>
                             <span className="recentSearchNewsTitle"
