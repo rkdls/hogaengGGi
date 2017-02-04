@@ -3,6 +3,9 @@
  */
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import aboutOne from '../img/about01.png'
+import aboutTwo from '../img/about02.png'
+import aboutThree from '../img/about03.png'
 
 class About extends Component {
 
@@ -10,10 +13,27 @@ class About extends Component {
     render() {
 
         return (
-            <div
-                className="About"
-            >
-                어바웃 페이지
+            <div className="about">
+                <div className="row">
+                    <div className="col-sm-4 text-center">
+                        <div className="img_wrap">
+                            <img src={ aboutOne } alt=""/>
+                            <p>정돈된 검색</p>
+                        </div>
+                    </div>
+                    <div className="col-sm-4 text-center">
+                        <div className="img_wrap">
+                            <img src={ aboutTwo } alt=""/>
+                            <p>선택에 현명한 소비를</p>
+                        </div>
+                    </div>
+                    <div className="col-sm-4 text-center">
+                        <div className="img_wrap">
+                            <img src={ aboutThree } alt=""/>
+                            <p>의견공유</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -7,8 +7,8 @@ import {connect} from 'react-redux';
 import * as AjaxReq from '../actions/DB'
 import {FadeLoader} from 'halogen'
 import {Redirect, Route} from 'react-router-dom';
-import ResultPage from '../contents/ResultPage'
-import About from '../contents/About'
+
+
 
 
 class SearchBar extends Component {
@@ -54,8 +54,9 @@ class SearchBar extends Component {
                 {
                     this.props.SearchLoading === 'Loading' &&
                     <FadeLoader color="#34239f"
-                                size="16px"
-                                margin="4px"
+                                size="44"
+                                left="50%"
+                                position="absolute"
                     />
                 }
                 {
@@ -85,8 +86,6 @@ class SearchBar extends Component {
                         </button>
                     </div>
                 }
-                <Route path={'/searchresult'} component={ResultPage}/>
-                <Route path={'/about'} component={About}/>
             </div>
         );
     }

@@ -4,6 +4,9 @@ import SearchBar from './search/SearchBar'
 import {Route, Link} from 'react-router-dom';
 import logo from './img/logo1.png'
 import centerLogo from './img/center_logo.png'
+import FreeBoard from './contents/FreeBoard'
+import ResultPage from './contents/ResultPage'
+import About from './contents/About'
 
 class App extends Component {
     render() {
@@ -19,13 +22,12 @@ class App extends Component {
                         />
                         </Link></h1>
                         <ul>
-                            <li><Link to="#">About</Link></li>
+                            <li><Link to="/about">About</Link></li>
                             <li><Link to="#">Recent News</Link></li>
                             <li><Link to="#community">Community</Link></li>
                         </ul>
                     </div>
                     <div className="navRight">
-                        <p>right contents</p>
                     </div>
                 </nav>
                 <section className="mainSearchArea">
@@ -36,45 +38,10 @@ class App extends Component {
                 </section>
             </header>
             <section className="mainContents">
+            <Route path={'/searchresult'} component={ResultPage}/>
+            <Route path={'/about'} component={About}/>
                 <div className="row">
-                    <div className="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-                        <article className="leftSide">
-                            <section className="community">
-                                <h3 className="community_title"><span>Community</span></h3>
-                            </section>
-                            <div className="slider">
-                                <div className="row">
-                                    <div className="col-md-4">
-                                        <figure>
-                                            <img src="" alt=""/>
-                                            <figcaption>
-
-                                            </figcaption>
-                                        </figure>
-
-                                    </div>
-                                    <div className="col-md-4">
-                                        <figure>
-                                            <img src="" alt=""/>
-                                            <figcaption>
-
-                                            </figcaption>
-                                        </figure>
-
-                                    </div>
-                                    <div className="col-md-4">
-                                        <figure>
-                                            <img src="" alt=""/>
-                                            <figcaption>
-
-                                            </figcaption>
-                                        </figure>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+                    <Route exact path={'/'} component={FreeBoard}/>
                     <div className="col-lg-5 col-md-5 col-sm-6 col-xs-12">
                         <article className="rightSide">
                             <Route exact path={'/'} component={Board}/>

@@ -20,9 +20,10 @@ class ResultPage extends Component {
                 {
                     (this.props.SearchRes && this.props.SearchLoading==='Done')&&
                     this.props.SearchRes.map((val, i) => {
-                        return <li
+                        return <a href={val.link}
+                        key={i}>
+                        <li
                             className="InnerSearchBoardList"
-                            key={i}
                         >
                             <div
                                 className="ImageSearchWrap"
@@ -40,6 +41,7 @@ class ResultPage extends Component {
                                 {val.description}
                             </span>
                         </li>
+                        </a>
                     })
                 }
                 {

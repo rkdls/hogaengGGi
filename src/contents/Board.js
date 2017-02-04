@@ -38,9 +38,11 @@ class Board extends Component {
                         {
                             this.props.recentBoard &&
                             this.props.recentBoard.map((val, i) => {
-                                return <li
+                                return <a
+                                href={val.link}
+                                key={val.title.toString()}
+                                ><li
                                     className="InnerRecentBoardList"
-                                    key={val.title.toString()}
                                 >
                                     <div
                                         className="ImageWrap"
@@ -57,7 +59,7 @@ class Board extends Component {
                                     >
                                         {val.description}
                                     </span>
-                                </li>
+                                </li></a>
                             })
                         }
                     </ul>
