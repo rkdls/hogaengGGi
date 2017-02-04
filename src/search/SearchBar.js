@@ -2,7 +2,7 @@
  * Created by youngil on 2017-02-04.
  */
 
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as AjaxReq from '../actions/DB'
 import {FadeLoader} from 'halogen'

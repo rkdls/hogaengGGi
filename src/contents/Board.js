@@ -28,7 +28,7 @@ class Board extends Component {
                     >
                         {
 
-                            this.props.Loading == 'Loading' &&
+                            this.props.Loading === 'Loading' &&
                             <FadeLoader color="#34239f"
                                         size="16px"
                                         margin="4px"
