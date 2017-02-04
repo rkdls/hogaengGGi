@@ -9,7 +9,6 @@ class App extends Component {
                 <div
                     className="mainContents"
                 >
-
                     <Board/>
                 </div>
             </div>

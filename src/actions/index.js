@@ -12,6 +12,12 @@ export const Loading = (res) =>{
 export const RecentBoardRequest = (res) => {
     console.log('reducer response ', res);
     return{
-        type:'RecentBoardRequest'
+        type:'RecentBoardRequest',
+        // descriptions:res.description,
+        // link:res.link,
+        // originallink:res.originallink,
+        // pubDate:res.pubDate,
+        // title:res.title
+        recentBoard:res
     }
 };
