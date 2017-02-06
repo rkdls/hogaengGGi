@@ -18,34 +18,38 @@ class ResultPage extends Component {
                 className="SearchRes"
             >
                 {
-                    (this.props.SearchRes && this.props.SearchLoading==='Done')&&
+                    (this.props.SearchRes && this.props.SearchLoading === 'Done') &&
                     this.props.SearchRes.map((val, i) => {
+                        var re = /<b>/g;
+                        var re2 = /<\/b>/g;
+                        const parsedTitle = val.title.replace(re, '').replace(re2, '').replace('&quot', '');
+                        const parsedBody = val.description.replace(re, '').replace(re2, '').replace('&quot', '');
                         return <a href={val.link}
-                        key={i}>
-                        <li
-                            className="InnerSearchBoardList"
-                        >
-                            <div
-                                className="ImageSearchWrap"
+                                  key={i}>
+                            <li
+                                className="InnerSearchBoardList"
                             >
-                                <img
-                                    className="recentSearchNewsImg"
-                                    alt="상세 뉴스이미지"
-                                    src={val.imgurl}
-                                />
-                            </div>
-                            <span className="recentSearchNewsTitle"
-                            >{val.title}</span>
-                            <span className="recentSearchNewsDescription"
-                            >
-                                {val.description}
+                                <div
+                                    className="ImageSearchWrap"
+                                >
+                                    <img
+                                        className="recentSearchNewsImg"
+                                        alt="상세 뉴스이미지"
+                                        src={val.imgurl}
+                                    />
+                                </div>
+                                <span className="recentSearchNewsTitle"
+                                >{parsedTitle}</span>
+                                <span className="recentSearchNewsDescription"
+                                >
+                                {parsedBody}
                             </span>
-                        </li>
+                            </li>
                         </a>
                     })
                 }
                 {
-                    this.props.SearchLoading ==='Done_But_Fail' &&
+                    this.props.SearchLoading === 'Done_But_Fail' &&
                     <li>검색에 실패하였습니다 다시 시도해주세요~!</li>
                 }
             </div>

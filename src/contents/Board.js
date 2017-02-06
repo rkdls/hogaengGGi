@@ -35,8 +35,16 @@ class Board extends Component {
                         }
 
                         {
+
+
                             this.props.recentBoard &&
                             this.props.recentBoard.map((val, i) => {
+                                var re = /<b>/g;
+                                var re2 = /<\/b>/g;
+                                const parsedTitle = val.title.replace(re, '').replace(re2, '').replace('&quot','');
+                                const parsedBody = val.description.replace(re, '').replace(re2, '').replace('&quot','');
+
+                                console.log('parsedTitle', parsedTitle);
                                 return <a
                                 href={val.link}
                                 key={val.title.toString()}
@@ -53,10 +61,10 @@ class Board extends Component {
                                         />
                                     </div>
                                     <span className="recentNewsTitle"
-                                    >{val.title}</span>
+                                    >{parsedTitle}</span>
                                     <span className="recentNewsDescription"
                                     >
-                                        {val.description}
+                                        {parsedBody}
                                     </span>
                                 </li></a>
                             })

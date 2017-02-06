@@ -11,7 +11,7 @@ export const recentBoardRequest = (...args) => {
         dispatch(actions.Loading());
         $.ajax({
 
-            url: 'https://hogang-api-sghiroo.c9users.io/news.json',
+            url: 'https://localhost:3000/news.json',
             success: function (res) {
                 console.log('받아온값 @@@', res);
                 dispatch(actions.RecentBoardRequest(res))
@@ -28,7 +28,7 @@ export const Search = (...args) => {
     console.log('recentBoardRequest');
     console.log('SearchArgs', args);
     return function (dispatch) {
-        const urltitle = 'https://hogang-api-sghiroo.c9users.io/news/'+args[0]+'.json';
+        const urltitle = 'https://localhost:3000/news/'+args[0]+'.json';
         console.log('wwwwf', urltitle);
         dispatch(actions.SearchLoading());
         $.ajax({
